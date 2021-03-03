@@ -41,7 +41,7 @@
 navbar navbar-expand-lg navbar-light bg-light {
 	background-color: #D4D8D4;
 }
-h6, h5 {
+h6, h5, h4, h2 {
 	padding-top:15px;
 }
 table{
@@ -51,12 +51,45 @@ table{
 input {
 	width:100%;
 }
-.table, th, td {
+.table {
+  border: 1px solid #D4D8D4;
+  border-collapse: collapse;
+  padding:5px;
+}
+td {
+  border: 1px solid #D4D8D4;
+  border-collapse: collapse;
+  padding:5px;
+}
+th {
   border: 1px solid #D4D8D4;
   border-collapse: collapse;
   padding:5px;
 }
 
+
+.collapsible {
+  background-color: #f1f1f1;
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+}
+
+.active, .collapsible:hover {
+  background-color: #D4D8D4;
+  
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  height:300px;
+}
 
 
 
@@ -66,16 +99,25 @@ input {
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-	
-  <img src="vdv.png" alt="vandervelde" style="width:15%; margin-top:3px; margin-bottom:3px">
+	<a href="main.html" onclick="return confirm('Dit formulier is niet opgeslagen, weet je zeker dat je het wilt verlaten?')" style="width:15%; margin-top:3px; margin-bottom:3px">
+  <img src="vdv.png" alt="vandervelde" style="width:100%" >
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <h3 style="padding-left:20px; color:#4F4F4F;">720036 IDS Maasdijk KB WS Aarding</h3>
 	<div class="ml-auto" style="text-align:right; color:#4F4F4F">
-	  <a style="font-size:20px;">Kathodische bescherming<br>Water-sludge</a></div>
+	  <a style="font-size:20px;">Kathodische bescherming<br>Water-sludge</a>
+	</div>
+	<div style="padding-left:15px;">
+	<!-- <button class="savebutton" style="background: #0D8240; -->
+	<!-- border-color: #009933;height: 60px; width: 200px;  -->
+	<!-- float:right;" type="submit">Formulier opslaan</button> -->
+		<button type="button" class="btn btn-primary" style="background-color:#009933; height:60px; width:200px; font-size:20px">Formulier opslaan</button>
+	</div>
   </div>
+  
 </nav>
 
 <div style="padding-left: 15px; padding-right: 15px">
@@ -92,46 +134,46 @@ input {
     </div>
 	<div class="col-sm" style="background-color: #f5f3f3; padding-bottom:15px">
 		<h6>Algemene gegevens</h6>
-		<table>
-		  <tr>
-			<td>Projectnr.:</td>
-			<td>7200336</td>
+		<table style="border: none; padding: 0px">
+		  <tr style="border: none; padding: 0px">
+			<td style="border: none; padding: 0px">Projectnr.:</td>
+			<td style="border: none; padding: 0px">7200336</td>
 		  </tr>
-		  <tr>
-			<td>Ordernr. klant:</td>
-			<td>loc:336</td>
+		  <tr style="border: none; padding: 0px">
+			<td style="border: none; padding: 0px">Ordernr. klant:</td>
+			<td style="border: none; padding: 0px">loc:336</td>
 		  </tr>
-		  <tr>
-			<td>Inspecteur:</td>
-			<td>M. Boonzaier</td>
+		  <tr style="border: none; padding: 0px">
+			<td style="border: none; padding: 0px">Inspecteur:</td>
+			<td style="border: none; padding: 0px">M. Boonzaier</td>
 		  </tr>
-		  <tr>
-			<td>Inspectiedatum:</td>
-			<td>2-2-2021</td>
+		  <tr style="border: none; padding: 0px">
+			<td style="border: none; padding: 0px">Inspectiedatum:</td>
+			<td style="border: none; padding: 0px">2-2-2021</td>
 		  </tr>
 		</table>
 	</div>
 	<div class="col-sm" style="background-color: #f5f3f3; padding-bottom:15px;  padding-top: 15px;">
-	<table>
-	  <tr>
-		<td>Instelling gelijkrichter:</td>
-		<td></td>
+	<table class="exclude" style="border: none; padding: 0px">
+	  <tr style="border: none; padding: 0px">
+		<td style="border: none; padding: 0px">Instelling gelijkrichter:</td>
+		<td style="border: none; padding: 0px"></td>
 	  </tr>
-	  <tr>
-		<td>Meetjaar:</td>
-		<td>2021</td>
+	  <tr style="border: none; padding: 0px">
+		<td style="border: none; padding: 0px">Meetjaar:</td>
+		<td style="border: none; padding: 0px">2021</td>
 	  </tr>
-	  <tr>
-		<td>Criteria kath. besch.:</td>
-		<td>AS 6800 - protocol 6801</td>
+	  <tr style="border: none; padding: 0px">
+		<td style="border: none; padding: 0px">Criteria kath. besch.:</td>
+		<td style="border: none; padding: 0px">AS 6800 - protocol 6801</td>
 	  </tr>
-	  <tr>
-		<td>Criteria water/sludge:</td>
-		<td>AS 6800 - protocol 6802</td>
+	  <tr style="border: none; padding: 0px">
+		<td style="border: none; padding: 0px">Criteria water/sludge:</td>
+		<td style="border: none; padding: 0px">AS 6800 - protocol 6802</td>
 	  </tr>
-	  <tr>
-		<td>Type kath. besch.:</td>
-		<td>mgn 2*10kg</td>
+	  <tr style="border: none; padding: 0px">
+		<td style="border: none; padding: 0px">Type kath. besch.:</td>
+		<td style="border: none; padding: 0px">mgn 2*10kg</td>
 	  </tr>
 	</table>
   </div>
@@ -141,16 +183,13 @@ input {
   
   <div class="row">
     <div class="col-sm">
-		<h5>Bevindingen</h5>
+		<h4>Bevindingen</h4>
 	</div>
-	<div class="col-sm" style="padding-top:15px">
-		
-			<button style="height:50px; width: 200px; float:right;" type="submit">Formulier opslaan</button>
+	
 		</div>
-		</div>
-<div class="row" style="padding-top:20px;">
+<div class="row" style="padding-top:10px;">
     <div class="col-sm">
-    <table id="example" class="table-custom" style="width:100%">
+    <table id="example" style="width:100%">
         <thead>
             <tr>
                 <th>Tank nr.</th>
@@ -161,7 +200,7 @@ input {
 				<th>M.E.P. aan</th>
 				<th>in -mV uit</th>
 				<th>Stroom (mA)</th>
-				<th>> 5 mm water cm-pH-</th>
+				<th>>5mm water cm-pH-mS/m</th>
 				<th>Sludge</th>
 				<th>Opm.</th>
 				<th>Conclusie</th>
@@ -200,8 +239,8 @@ input {
 				<td></td>
                 <td></td>
 				<td></td>
-                <td><input type="text" id="row-1-position" name="row-1-position" value="nee"></td>
-				<td><input type="text" id="row-1-age" name="row-1-age" value="nee"></td>
+                <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+				<td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
                 <td><select style="width:100%;" size="1" id="row-1-office" name="">
                     <option value="+" selected="selected">
@@ -223,8 +262,8 @@ input {
 				<td></td>
                 <td></td>
 				<td></td>
-                <td><input type="text" id="row-1-position" name="row-1-position" value="nee"></td>
-				<td><input type="text" id="row-1-age" name="row-1-age" value="nee"></td>
+                <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+				<td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
                 <td><select style="width:100%;" size="1" id="row-1-office" name="">
                     <option value="+" selected="selected">
@@ -269,8 +308,8 @@ input {
 				<td></td>
                 <td></td>
 				<td></td>
-                <td><input type="text" id="row-1-position" name="row-1-position" value="nee"></td>
-				<td><input type="text" id="row-1-age" name="row-1-age" value="nee"></td>
+                <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+				<td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
                 <td><select style="width:100%;" size="1" id="row-1-office" name="">
                     <option value="+" selected="selected">
@@ -286,34 +325,77 @@ input {
             
             
         </tbody>
-        <tfoot>
-            <tr>
-                <th>Tank nr.</th>
-                <th>Inhoud(m3)</th>
-                <th>Product</th>
-				<th>Bekleding</th>
-				<th>Bouwjaar</th>
-				<th>M.E.P. aan</th>
-				<th>in -mV uit</th>
-				<th>Stroom (mA)</th>
-				<th>> 5 mm water cm-pH-</th>
-				<th>Sludge</th>
-				<th>Opm.</th>
-				<th>Conclusie</th>
-            </tr>
-        </tfoot>
+        <!-- <tfoot> -->
+            <!-- <tr> -->
+                <!-- <th>Tank nr.</th> -->
+                <!-- <th>Inhoud(m3)</th> -->
+                <!-- <th>Product</th> -->
+				<!-- <th>Bekleding</th> -->
+				<!-- <th>Bouwjaar</th> -->
+				<!-- <th>M.E.P. aan</th> -->
+				<!-- <th>in -mV uit</th> -->
+				<!-- <th>Stroom (mA)</th> -->
+				<!-- <th>> 5 mm water cm-pH-</th> -->
+				<!-- <th>Sludge</th> -->
+				<!-- <th>Opm.</th> -->
+				<!-- <th>Conclusie</th> -->
+            <!-- </tr> -->
+        <!-- </tfoot> -->
     </table>
-		</div>
-		</div>
+	</div>
+</div>
 
-<div class="row" style="padding-top:20px;">
+<div class="row" style="padding-top:15px;">
     <div class="col-sm">
 	
+	<button type="button" class="collapsible">Extra informatie
+	<img src="arrow_down.webp" style="height:25px; float:right; opacity: 0.4;"></img></button>
+	
+		<div class="content">
+			<div class="row" style="padding-top:10px;">
+				<div class="col-sm">
+					<p style="padding-top:10px;">Toegangscode technische ruimte Vervolgens het alarm uitschakelen met de alarmcode.
+					<br>- Nieuwe code 4115 (deur 5114)<br>- Alarmcode 4120<br>Bij toegang problemen SFA (Emma) bellen!</p>
+				
+				</div>
+				<div class="col-sm">
+					<p style="padding-top:10px;">
+						<b>Contactpersoon</b><br>Bij problemen of uitvoering niet mogelijk direct bellen:
+						<br>Rober van Ispelen, tel +32 32413239<br>Vanaf 2019 ook gw pelibuizen 2 en 3 bemonsteren<br>Tankkeuring juni 2021
+					</p>
+				
+				</div>
+			</div>
+		  
+		</div>
 	
 	
 	</div>
+	<div class="col-sm">
+		<button type="button" class="collapsible">Algemene opmerkingen
+	<img src="arrow_down.webp" style="height:25px; float:right; opacity: 0.4;"></img></button>
+	
+		<div class="content">
+			<div class="row" style="padding-top:10px;">
+				<div class="col-sm">
+					<div class="form-group">
+						<div style="padding-top:10px; padding-bottom:10px">
+							<textarea class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
+						</div>
+						<form action="/action_page.php">
+							<input type="file" id="myFile" name="filename">
+						</form>
+						
+					</div>
+				
+				</div>
+			</div>
+		  
+		</div>
+	</div>
 </div>
-  
+
+
   
 </div>
 <script>
@@ -334,6 +416,23 @@ $(document).ready(function() {
         return false;
     } );
 } );
+</script>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
 </script>
 
 </body>

@@ -42,9 +42,10 @@
 navbar navbar-expand-lg navbar-light bg-light {
 	background-color: #D4D8D4;
 }
-h6, h5, h4, h2 {
+h6, h4, h2 {
 	padding-top:15px;
 }
+
 table{
   border-spacing:0;
   font-size: 15px;
@@ -182,11 +183,13 @@ th {
   <div class="row">
     <div class="col-sm">
 		<h4>Bevindingen</h4>
+    <hr>
 	</div>
 	
 		</div>
-<div class="row" style="padding-top:10px;">
+<div class="row" style="padding-top:0px;">
     <div class="col-sm">
+      <h5>Kathodische bescherming</h5>
     <table id="example" style="width:100%">
         <thead>
             <tr>
@@ -344,25 +347,254 @@ th {
 </div>
 
 <div class="row" style="padding-top:15px;">
+  <div class="col-sm">
+
+<button type="button" class="collapsible">Extra informatie
+<img src="arrow_down.webp" style="height:25px; float:right; opacity: 0.4;"></img></button>
+
+  <div class="content">
+    <div class="row" style="padding-top:10px;">
+      <div class="col-sm">
+        <p style="padding-top:10px;">Toegangscode technische ruimte Vervolgens het alarm uitschakelen met de alarmcode.
+        <br>- Nieuwe code 4115 (deur 5114)<br>- Alarmcode 4120<br>Bij toegang problemen SFA (Emma) bellen!</p>
+      
+      </div>
+      <div class="col-sm">
+        <p style="padding-top:10px;">
+          <b>Contactpersoon</b><br>Bij problemen of uitvoering niet mogelijk direct bellen:
+          <br>Rober van Ispelen, tel +32 32413239<br>Vanaf 2019 ook gw pelibuizen 2 en 3 bemonsteren<br>Tankkeuring juni 2021
+        </p>
+      
+      </div>
+    </div>
+    
+  </div>
+
+
+</div>
+<div class="col-sm">
+  <button type="button" class="collapsible">Interne opmerkingen
+<img src="arrow_down.webp" style="height:25px; float:right; opacity: 0.4;"></img></button>
+
+  <div class="content">
+    <div class="row" style="padding-top:10px;">
+      <div class="col-sm">
+        <div class="form-group">
+          <div style="padding-top:10px; padding-bottom:10px">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
+          </div>
+          <form action="/action_page.php">
+            <input type="file" id="myFile" name="filename">
+          </form>
+          
+        </div>
+      
+      </div>
+    </div>
+    
+  </div>
+</div>
+</div>
+<hr>
+<!-- Grondwater
+Dummy data van: 7310111 Texaco Boxtel-->
+<div class="row" >
+  <div class="col-sm">
+
+    
+    <div style=" width: 80%;">
+    <h5>Grondwater bemonstering</h5>
+    <table id="example" style="width:100%">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Peilbuis 1</th>
+          <th>Peilbuis 2</th>
+          <th>Peilbuis 3</th>
+              
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Diepte peilbuis tov bovenkant peilbuis (cm)</td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value="395"></td>
+          <td><input type="text" id="row-1-position" name="row-1-position" value="400"></td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value="320"></td>   
+        </tr>
+        <tr>
+          <td>Bovenkant peilbuis tov maaiveld (cm)</td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>   
+        </tr>
+        <tr>
+          <td>Inwendige diameter filter (mm) / Lengte filter (cm)</td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value="28 / 100"></td>
+          <td><input type="text" id="row-1-position" name="row-1-position" value="36 / 100"></td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value="28 / 100"></td>    
+        </tr>
+        <tr>
+          <td>Grondwaterstand tov bovenkant peilbuis (cm)</td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
+        </tr>
+        <tr>
+          <td>Peilbuis snijdend met grondwater?</td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
+        </tr>
+        <tr>
+          <td>Drijflaag of zaklaag aanwezig?</td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
+        </tr>
+        <tr>
+          <td>Afgepompte volume (liter)</td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
+        </tr>
+        <tr>
+          <td>EGV (μS/cm)</td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
+        </tr>
+        <tr>
+          <td>Temperatuur (°C)</td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
+        </tr>
+        <tr>
+          <td>Kleurloos/Helder/Geurloos (passief waarnemen)?</td>
+          
+          
+          <td><select style="width:32%" name="janee" id="anee">
+            <option value="ja">Ja</option>
+            <option value="nee">Nee</option>
+          </select>
+          <select style="width:32%" name="janee" id="anee">
+            <option value="ja">Ja</option>
+            <option value="nee">Nee</option>
+          </select>
+          <select style="width:32%" name="janee" id="anee">
+            <option value="ja">Ja</option>
+            <option value="nee">Nee</option>
+          </select></td>
+          
+          <td><select style="width:32%" name="janee" id="anee">
+            <option value="ja">Ja</option>
+            <option value="nee">Nee</option>
+          </select>
+          <select style="width:32%" name="janee" id="anee">
+            <option value="ja">Ja</option>
+            <option value="nee">Nee</option>
+          </select>
+          <select style="width:32%" name="janee" id="anee">
+            <option value="ja">Ja</option>
+            <option value="nee">Nee</option>
+          </select></td>
+          <td><select style="width:32%" name="janee" id="anee">
+            <option value="ja">Ja</option>
+            <option value="nee">Nee</option>
+          </select>
+          <select style="width:32%" name="janee" id="anee">
+            <option value="ja">Ja</option>
+            <option value="nee">Nee</option>
+          </select>
+          <select style="width:32%" name="janee" id="anee">
+            <option value="ja">Ja</option>
+            <option value="nee">Nee</option>
+          </select></td>     
+        </tr>
+        <tr>
+          <td>Peilbuis goedlopend/slechtlopend</td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
+        </tr>
+        <tr>
+          <td>Niet belucht / belucht / onbekend<br>Indien belucht, voldoende voor vol flesje?</td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
+        </tr>
+        <tr>
+          <td>Afgeweken van protocol 2002 of NEN 5744/A1?</td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
+        </tr>
+        <tr>
+          <td>Tijdstip monstername</td>
+          <td><input type="time" id="row-1-age" name="row-1-age" value=""></td>
+          <td><input type="time" id="row-1-position" name="row-1-position" value=""></td>
+          <td><input type="time" id="row-1-age" name="row-1-age" value=""></td>     
+        </tr>
+        <tr>
+          <td>Monstercode minerale olie</td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
+        </tr>
+        <tr>
+          <td>Monstercode vluchtige verbindingen</td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
+        </tr>
+        <tr>
+          <td>Opmerkingen</td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
+        </tr>
+        
+    
+      </tbody>
+      <!-- <tfoot> -->
+          <!-- <tr> -->
+              <!-- <th>Tank nr.</th> -->
+              <!-- <th>Inhoud(m3)</th> -->
+              <!-- <th>Product</th> -->
+      <!-- <th>Bekleding</th> -->
+      <!-- <th>Bouwjaar</th> -->
+      <!-- <th>M.E.P. aan</th> -->
+      <!-- <th>in -mV uit</th> -->
+      <!-- <th>Stroom (mA)</th> -->
+      <!-- <th>> 5 mm water cm-pH-</th> -->
+      <!-- <th>Sludge</th> -->
+      <!-- <th>Opm.</th> -->
+      <!-- <th>Conclusie</th> -->
+          <!-- </tr> -->
+      <!-- </tfoot> -->
+  </table>
+</div>
+
+  </div>
+</div>
+
+<div class="row" style="padding-top:15px; padding-bottom:15px;">
     <div class="col-sm">
 	
 	<button type="button" class="collapsible">Extra informatie
 	<img src="arrow_down.webp" style="height:25px; float:right; opacity: 0.4;"></img></button>
 	
-		<div class="content">
-			<div class="row" style="padding-top:10px;">
-				<div class="col-sm">
-					<p style="padding-top:10px;">Toegangscode technische ruimte Vervolgens het alarm uitschakelen met de alarmcode.
-					<br>- Nieuwe code 4115 (deur 5114)<br>- Alarmcode 4120<br>Bij toegang problemen SFA (Emma) bellen!</p>
+		<div class="content"  style="overflow:auto;">
+			<div class="row">
+        
+					<p style="padding:10px;">
+            Voor de monstername wordt een slangenpomp toegepast. Er wordt veldfiltratie uitgevoerd. Conserveermiddelen worden vooraf aan het monster toegevoegd.<br><br>
+            De verklaring van accredilatie van Vandervelde Protection BV en het hierbij behorende keurmerk zijn uitsluitend van toepassing op de activiteiten zoals vastgelegd op het overzicht van verichtingen betreffende de monsterneming en de overdracht van de monsters, inclusief de daarbij behorende veldwerkregistratie, aan een erkende instelling.<br><br>
+            Het grondwatermonster wordt geanalyseerd op de verontreiniging conform AS SIKB 3000 door SGS (een voor deze werkzaamheden geaccrediteerd en door de Minister erkend laboratorium).<br><br>
+            Bemonstering grondwater is uitgevoerd onafhankelijk van de opdrachtgever conform AS SIKB 2000.
+          </p>
 				
-				</div>
-				<div class="col-sm">
-					<p style="padding-top:10px;">
-						<b>Contactpersoon</b><br>Bij problemen of uitvoering niet mogelijk direct bellen:
-						<br>Rober van Ispelen, tel +32 32413239<br>Vanaf 2019 ook gw pelibuizen 2 en 3 bemonsteren<br>Tankkeuring juni 2021
-					</p>
 				
-				</div>
 			</div>
 		  
 		</div>

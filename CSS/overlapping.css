@@ -1,0 +1,10 @@
+.welcome-user {
+    position:absolute;
+    top: 25px;
+    right: 10px;
+}
+.logout {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+}

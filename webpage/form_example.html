@@ -1,669 +1,860 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Vandervelde • Inspectierapport</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="icon" href="vdv.png">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<style>
-.header {
-    width: 100%;
-	height: 100%;
-  	background-color: #D4D8D4;
-}
-.login-form form {
-    margin-bottom: 15px;
-    background: #f7f7f7;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    padding: 30px;
-}
-.login-form h2 {
-    margin: 0 0 15px;
-}
-.form-control, .btn {
-    min-height: 38px;
-    border-radius: 2px;
-}
-.btn {        
-    font-size: 15px;
-    font-weight: bold;
-	background: #0D8240;
-	border-color: #009933
-}
-.btn:hover {
-	background-color: #009933;
-	border-color: #0D8240
-}
-navbar navbar-expand-lg navbar-light bg-light {
-	background-color: #D4D8D4;
-}
-h6, h4, h2 {
-	padding-top:15px;
-}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Vandervelde • Inspectierapport</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="vdv.png">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <style>
+    .header {
+      width: 100%;
+      height: 100%;
+      background-color: #D4D8D4;
+    }
 
-table{
-  border-spacing:0;
-  font-size: 15px;
-}
-input {
-	width:100%;
-}
-.table {
-  border: 1px solid #D4D8D4;
-  border-collapse: collapse;
-  padding:5px;
-}
-td {
-  border: 1px solid #D4D8D4;
-  border-collapse: collapse;
-  padding:5px;
-}
-th {
-  border: 1px solid #D4D8D4;
-  border-collapse: collapse;
-  padding:5px;
-}
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    body {
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+
+    .login-form form {
+      margin-bottom: 15px;
+      background: #f7f7f7;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+      padding: 30px;
+    }
+
+    .login-form h2 {
+      margin: 0 0 15px;
+    }
+
+    .form-control,
+    .btn {
+      min-height: 38px;
+      border-radius: 2px;
+    }
+
+    .btn {
+      font-size: 15px;
+      font-weight: bold;
+      background: #0D8240;
+      border-color: #009933
+    }
+
+    .btn:hover {
+      background-color: #009933;
+      border-color: #0D8240
+    }
+
+    navbar navbar-expand-lg navbar-light bg-light {
+      background-color: #D4D8D4;
+    }
+
+    h6,
+    h4,
+    h2 {
+      padding-top: 15px;
+    }
+
+    table {
+      border-spacing: 0;
+      font-size: 15px;
+    }
+
+    input {
+      width: 100%;
+    }
+
+    .table {
+      border: 1px solid #D4D8D4;
+      border-collapse: collapse;
+      padding: 5px;
+    }
+
+    td {
+      border: 1px solid #D4D8D4;
+      border-collapse: collapse;
+      padding: 5px;
+    }
+
+    th {
+      border: 1px solid #D4D8D4;
+      border-collapse: collapse;
+      padding: 5px;
+    }
 
 
-.collapsible {
-  background-color: #f1f1f1;
-  cursor: pointer;
-  padding: 15px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-}
+    .collapsible {
+      background-color: #f1f1f1;
+      cursor: pointer;
+      padding: 15px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+    }
 
-.active, .collapsible:hover {
-  background-color: #D4D8D4;
-  
-}
+    .active,
+    .collapsible:hover {
+      background-color: #D4D8D4;
 
-.content {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  background-color: #f1f1f1;
-  height:300px;
-}
+    }
 
-
-
+    .content {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: #f1f1f1;
+      height: 300px;
+    }
 
 
-</style>
+
+    .tab {
+      overflow: hidden;
+      background-color: #f5f3f3;
+      padding-top: 10px;
+    }
+
+    /* Style the buttons inside the tab */
+    .tab button {
+      background-color: #f5f3f3;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 20px;
+      transition: 0.1s;
+      font-size: 17px;
+      object-fit: cover;
+      width: 33%;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: white;
+      border-radius: 10px 10px 0 0;
+      color: #009933;
+      font-weight: bold;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: white;
+      border-radius: 10px 10px 0 0;
+      color: #009933;
+      font-weight: bold;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+      display: none;
+    }
+  </style>
 </head>
+
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<a href="main.html" onclick="return confirm('Dit formulier is niet opgeslagen, weet je zeker dat je het wilt verlaten?')" style="width:15%; margin-top:3px; margin-bottom:3px">
-  <img src="vdv.png" alt="vandervelde" style="width:100%" >
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <h3 style="padding-left:20px; color:#4F4F4F;">720036 IDS Maasdijk KB WS Aarding</h3>
-	<div class="ml-auto" style="text-align:right; color:#4F4F4F">
-	  <a style="font-size:20px;">Kathodische bescherming<br>Water-sludge</a>
-	</div>
-	<div style="padding-left:15px;">
-		<button type="button" class="btn btn-primary" style="background-color:#009933; height:60px; width:200px; font-size:20px">Formulier opslaan</button>
-	</div>
-  </div>
-  
-</nav>
-
-<div style="padding-left: 15px; padding-right: 15px">
-  <div class="row" style="border: 1px solid #f5f3f3;">
-
-    <div class="col-sm">
-      <h6>Opdrachtgever:</h6>
-	  <a style="font-size:15px;">SFA TESTSYSTEMEN BV<br>factuur@sfa-testsystemen.nl<br>Postbus 146<br>5690 AC SON EN BREUGEL</a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a href="main.html"
+      onclick="return confirm('Dit formulier is niet opgeslagen, weet je zeker dat je het wilt verlaten?')"
+      style="width:15%; margin-top:3px; margin-bottom:3px">
+      <img src="vdv.png" alt="vandervelde" style="width:100%">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <h3 style="padding-left:20px; color:#4F4F4F;">720036 IDS Maasdijk KB WS Aarding</h3>
+      <div class="ml-auto" style="text-align:right; color:#4F4F4F">
+        <a style="font-size:20px;">Kathodische bescherming<br>Water-sludge</a>
+      </div>
+      <div style="padding-left:15px;">
+        <button type="button" class="btn btn-primary"
+          style="background-color:#009933; height:60px; width:200px; font-size:20px">Formulier opslaan</button>
+      </div>
     </div>
-    <div class="col-sm">
-      <h6>Plaats van de installatie:</h6>
-	  <a style="font-size:15px;">IDS Maasdijk<br>Honderdland 101<br>2676 LT Maasdijk</a>
-    
+
+  </nav>
+
+  <div style="padding-left: 15px; padding-right: 15px">
+    <div class="row">
+
+      <div class="col-sm">
+        <h6>Bevindingen:</h6>
+        <a style="font-size:15px;">SFA TESTSYSTEMEN BV<br>factuur@sfa-testsystemen.nl<br>Postbus 146<br>5690 AC SON EN
+          BREUGEL</a>
+      </div>
+      <div class="col-sm">
+        <h6>Plaats van de installatie:</h6>
+        <a style="font-size:15px;">IDS Maasdijk<br>Honderdland 101<br>2676 LT Maasdijk</a>
+
+      </div>
+      <div class="col-sm" style="background-color: #f5f3f3; padding-bottom:15px">
+        <h6>Algemene gegevens</h6>
+        <table style="border: none; padding: 0px">
+          <tr style="border: none; padding: 0px">
+            <td style="border: none; padding: 0px">Projectnr.:</td>
+            <td style="border: none; padding: 0px">7200336</td>
+          </tr>
+          <tr style="border: none; padding: 0px">
+            <td style="border: none; padding: 0px">Ordernr. klant:</td>
+            <td style="border: none; padding: 0px">loc:336</td>
+          </tr>
+          <tr style="border: none; padding: 0px">
+            <td style="border: none; padding: 0px">Inspecteur:</td>
+            <td style="border: none; padding: 0px">M. Boonzaier</td>
+          </tr>
+          <tr style="border: none; padding: 0px">
+            <td style="border: none; padding: 0px">Inspectiedatum:</td>
+            <td style="border: none; padding: 0px">2-2-2021</td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-sm" style="background-color: #f5f3f3; padding-bottom:15px;  padding-top: 15px;">
+        <table class="exclude" style="border: none; padding: 0px">
+          <tr style="border: none; padding: 0px">
+            <td style="border: none; padding: 0px">Instelling gelijkrichter:</td>
+            <td style="border: none; padding: 0px"></td>
+          </tr>
+          <tr style="border: none; padding: 0px">
+            <td style="border: none; padding: 0px">Meetjaar:</td>
+            <td style="border: none; padding: 0px">2021</td>
+          </tr>
+          <tr style="border: none; padding: 0px">
+            <td style="border: none; padding: 0px">Criteria kath. besch.:</td>
+            <td style="border: none; padding: 0px">AS 6800 - protocol 6801</td>
+          </tr>
+          <tr style="border: none; padding: 0px">
+            <td style="border: none; padding: 0px">Criteria water/sludge:</td>
+            <td style="border: none; padding: 0px">AS 6800 - protocol 6802</td>
+          </tr>
+          <tr style="border: none; padding: 0px">
+            <td style="border: none; padding: 0px">Type kath. besch.:</td>
+            <td style="border: none; padding: 0px">mgn 2*10kg</td>
+          </tr>
+        </table>
+      </div>
+
     </div>
-	<div class="col-sm" style="background-color: #f5f3f3; padding-bottom:15px">
-		<h6>Algemene gegevens</h6>
-		<table style="border: none; padding: 0px">
-		  <tr style="border: none; padding: 0px">
-			<td style="border: none; padding: 0px">Projectnr.:</td>
-			<td style="border: none; padding: 0px">7200336</td>
-		  </tr>
-		  <tr style="border: none; padding: 0px">
-			<td style="border: none; padding: 0px">Ordernr. klant:</td>
-			<td style="border: none; padding: 0px">loc:336</td>
-		  </tr>
-		  <tr style="border: none; padding: 0px">
-			<td style="border: none; padding: 0px">Inspecteur:</td>
-			<td style="border: none; padding: 0px">M. Boonzaier</td>
-		  </tr>
-		  <tr style="border: none; padding: 0px">
-			<td style="border: none; padding: 0px">Inspectiedatum:</td>
-			<td style="border: none; padding: 0px">2-2-2021</td>
-		  </tr>
-		</table>
-	</div>
-	<div class="col-sm" style="background-color: #f5f3f3; padding-bottom:15px;  padding-top: 15px;">
-	<table class="exclude" style="border: none; padding: 0px">
-	  <tr style="border: none; padding: 0px">
-		<td style="border: none; padding: 0px">Instelling gelijkrichter:</td>
-		<td style="border: none; padding: 0px"></td>
-	  </tr>
-	  <tr style="border: none; padding: 0px">
-		<td style="border: none; padding: 0px">Meetjaar:</td>
-		<td style="border: none; padding: 0px">2021</td>
-	  </tr>
-	  <tr style="border: none; padding: 0px">
-		<td style="border: none; padding: 0px">Criteria kath. besch.:</td>
-		<td style="border: none; padding: 0px">AS 6800 - protocol 6801</td>
-	  </tr>
-	  <tr style="border: none; padding: 0px">
-		<td style="border: none; padding: 0px">Criteria water/sludge:</td>
-		<td style="border: none; padding: 0px">AS 6800 - protocol 6802</td>
-	  </tr>
-	  <tr style="border: none; padding: 0px">
-		<td style="border: none; padding: 0px">Type kath. besch.:</td>
-		<td style="border: none; padding: 0px">mgn 2*10kg</td>
-	  </tr>
-	</table>
-  </div>
 
-  </div>
+    <!-- -->
 
-  
-  <div class="row">
-    <div class="col-sm">
-		<h4>Bevindingen</h4>
-    <hr>
-	</div>
-	
-		</div>
-<div class="row" style="padding-top:0px;">
-    <div class="col-sm">
-      <h5>Kathodische bescherming</h5>
-    <table id="example" style="width:100%">
-        <thead>
-            <tr>
+    <div class="row">
+
+      <div class="col-sm" style="border: 2px solid #f5f3f3; ">
+        <h4 style="font-size:30px">Bevindingen</h4>
+      </div>
+      <div class="col-sm" style="background-color: #f5f3f3; border-top: 2px solid white;">
+        <div class="tab">
+          <button class="tablinks " onclick="openCity(event, 'kath')" id="defaultOpen">Kath. bescherming</button>
+          <button class="tablinks" onclick="openCity(event, 'aarding')">Aarding</button>
+          <button class="tablinks" onclick="openCity(event, 'gwm')">Grondw. monitoring</button>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <!--Kathodische bescherming-->
+    <div id="kath" class="tabcontent">
+      <div class="row" style="padding-top:15px;">
+        <hr>
+        <div class="col-sm">
+          <h5 style="padding-bottom:10px;">Kathodische bescherming</h5>
+          <table id="example" style="width:100%">
+            <thead>
+              <tr>
                 <th>Tank nr.</th>
                 <th>Inhoud(m3)</th>
                 <th>Product</th>
-				<th>Bekleding</th>
-				<th>Bouwjaar</th>
-				<th>M.E.P. aan</th>
-				<th>in -mV uit</th>
-				<th>Stroom (mA)</th>
-				<th>>5mm water cm-pH-mS/m</th>
-				<th>Sludge</th>
-				<th>Opm.</th>
-				<th>Conclusie</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+                <th>Bekleding</th>
+                <th>Bouwjaar</th>
+                <th>M.E.P. aan</th>
+                <th>in -mV uit</th>
+                <th>Stroom (mA)</th>
+                <th>>5mm water cm-pH-mS/m</th>
+                <th>Sludge</th>
+                <th>Opm.</th>
+                <th>Conclusie</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
                 <td>1</td>
                 <td><input type="text" id="row-1-age" name="row-1-age" value="100"></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value="diesel"></td>
-				<td><input type="text" id="row-1-age" name="row-1-age" value="ep"></td>
+                <td><input type="text" id="row-1-age" name="row-1-age" value="ep"></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value="2006"></td>
-				<td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-				<td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-				<td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
                 <td><select style="width:100%;" size="1" id="row-1-office" name="">
                     <option value="+" selected="selected">
-                        +
+                      +
                     </option>
                     <option value="-">
-                        -
+                      -
                     </option>
-                    
-                    
-                </select></td>
-            </tr>
-			<tr>
+
+
+                  </select></td>
+              </tr>
+              <tr>
                 <td></td>
                 <td></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value="w/s-controle"></td>
-				<td></td>
                 <td></td>
-				<td></td>
                 <td></td>
-				<td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-				<td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
                 <td><select style="width:100%;" size="1" id="row-1-office" name="">
                     <option value="+" selected="selected">
-                        +
+                      +
                     </option>
                     <option value="-">
-                        -
+                      -
                     </option>
-                    
-                    
-                </select></td>
-            </tr>
-			<tr>
+
+
+                  </select></td>
+              </tr>
+              <tr>
                 <td></td>
                 <td></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value="w/s-controle"></td>
-				<td></td>
                 <td></td>
-				<td></td>
                 <td></td>
-				<td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-				<td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
                 <td><select style="width:100%;" size="1" id="row-1-office" name="">
                     <option value="+" selected="selected">
-                        +
+                      +
                     </option>
                     <option value="-">
-                        -
+                      -
                     </option>
-                    
-                    
-                </select></td>
-            </tr>
-            <tr>
+
+
+                  </select></td>
+              </tr>
+              <tr>
                 <td>2</td>
                 <td><input type="text" id="row-1-age" name="row-1-age" value="10"></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value="reserve"></td>
-				<td><input type="text" id="row-1-age" name="row-1-age" value="ep"></td>
+                <td><input type="text" id="row-1-age" name="row-1-age" value="ep"></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value="2006"></td>
-				<td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-				<td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-				<td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
                 <td><select style="width:100%;" size="1" id="row-1-office" name="">
                     <option value="+" selected="selected">
-                        +
+                      +
                     </option>
                     <option value="-">
-                        -
+                      -
                     </option>
-                    
-                    
-                </select></td>
-            </tr>
-			<tr>
+
+
+                  </select></td>
+              </tr>
+              <tr>
                 <td></td>
                 <td></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value="w/s-controle"></td>
-				<td></td>
                 <td></td>
-				<td></td>
                 <td></td>
-				<td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-				<td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
                 <td><select style="width:100%;" size="1" id="row-1-office" name="">
                     <option value="+" selected="selected">
-                        +
+                      +
                     </option>
                     <option value="-">
-                        -
+                      -
                     </option>
-                    
-                    
-                </select></td>
-            </tr>
-            
-            
-        </tbody>
-        <!-- <tfoot> -->
+
+
+                  </select></td>
+              </tr>
+
+
+            </tbody>
+            <!-- <tfoot> -->
             <!-- <tr> -->
-                <!-- <th>Tank nr.</th> -->
-                <!-- <th>Inhoud(m3)</th> -->
-                <!-- <th>Product</th> -->
-				<!-- <th>Bekleding</th> -->
-				<!-- <th>Bouwjaar</th> -->
-				<!-- <th>M.E.P. aan</th> -->
-				<!-- <th>in -mV uit</th> -->
-				<!-- <th>Stroom (mA)</th> -->
-				<!-- <th>> 5 mm water cm-pH-</th> -->
-				<!-- <th>Sludge</th> -->
-				<!-- <th>Opm.</th> -->
-				<!-- <th>Conclusie</th> -->
+            <!-- <th>Tank nr.</th> -->
+            <!-- <th>Inhoud(m3)</th> -->
+            <!-- <th>Product</th> -->
+            <!-- <th>Bekleding</th> -->
+            <!-- <th>Bouwjaar</th> -->
+            <!-- <th>M.E.P. aan</th> -->
+            <!-- <th>in -mV uit</th> -->
+            <!-- <th>Stroom (mA)</th> -->
+            <!-- <th>> 5 mm water cm-pH-</th> -->
+            <!-- <th>Sludge</th> -->
+            <!-- <th>Opm.</th> -->
+            <!-- <th>Conclusie</th> -->
             <!-- </tr> -->
-        <!-- </tfoot> -->
-    </table>
-	</div>
-</div>
-
-<div class="row" style="padding-top:15px;">
-  <div class="col-sm">
-
-<button type="button" class="collapsible">Extra informatie
-<img src="arrow_down.webp" style="height:25px; float:right; opacity: 0.4;"></img></button>
-
-  <div class="content">
-    <div class="row" style="padding-top:10px;">
-      <div class="col-sm">
-        <p style="padding-top:10px;">Toegangscode technische ruimte Vervolgens het alarm uitschakelen met de alarmcode.
-        <br>- Nieuwe code 4115 (deur 5114)<br>- Alarmcode 4120<br>Bij toegang problemen SFA (Emma) bellen!</p>
-      
+            <!-- </tfoot> -->
+          </table>
+        </div>
       </div>
-      <div class="col-sm">
-        <p style="padding-top:10px;">
-          <b>Contactpersoon</b><br>Bij problemen of uitvoering niet mogelijk direct bellen:
-          <br>Rober van Ispelen, tel +32 32413239<br>Vanaf 2019 ook gw pelibuizen 2 en 3 bemonsteren<br>Tankkeuring juni 2021
-        </p>
-      
+
+      <div class="row" style="padding-top:15px;">
+        <div class="col-sm">
+
+          <button type="button" class="collapsible">Extra informatie
+            <img src="arrow_down.webp" style="height:25px; float:right; opacity: 0.4;"></img></button>
+
+          <div class="content">
+            <div class="row" style="padding-top:10px;">
+              <div class="col-sm">
+                <p style="padding-top:10px;">Toegangscode technische ruimte Vervolgens het alarm uitschakelen met de
+                  alarmcode.
+                  <br>- Nieuwe code 4115 (deur 5114)<br>- Alarmcode 4120<br>Bij toegang problemen SFA (Emma) bellen!
+                </p>
+
+              </div>
+              <div class="col-sm">
+                <p style="padding-top:10px;">
+                  <b>Contactpersoon</b><br>Bij problemen of uitvoering niet mogelijk direct bellen:
+                  <br>Rober van Ispelen, tel +32 32413239<br>Vanaf 2019 ook gw pelibuizen 2 en 3
+                  bemonsteren<br>Tankkeuring juni 2021
+                </p>
+
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+        <div class="col-sm">
+          <button type="button" class="collapsible">Interne opmerkingen
+            <img src="arrow_down.webp" style="height:25px; float:right; opacity: 0.4;"></img></button>
+
+          <div class="content">
+            <div class="row" style="padding-top:10px;">
+              <div class="col-sm">
+                <div class="form-group">
+                  <div style="padding-top:10px; padding-bottom:10px">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
+                  </div>
+                  <form action="/action_page.php">
+                    <input type="file" id="myFile" name="filename">
+                  </form>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
-    
-  </div>
 
 
-</div>
-<div class="col-sm">
-  <button type="button" class="collapsible">Interne opmerkingen
-<img src="arrow_down.webp" style="height:25px; float:right; opacity: 0.4;"></img></button>
-
-  <div class="content">
-    <div class="row" style="padding-top:10px;">
-      <div class="col-sm">
-        <div class="form-group">
-          <div style="padding-top:10px; padding-bottom:10px">
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
-          </div>
-          <form action="/action_page.php">
-            <input type="file" id="myFile" name="filename">
-          </form>
+    <!--Aarding-->
+    <div id="aarding" class="tabcontent">
+      <div class="row" style="padding-top:15px;">
+        <hr>
+        <div class="col-sm">
+          <h5 style="padding-bottom:10px;">Aarding</h5>
           
         </div>
-      
+      </div>
+
+      <div class="row" style="padding-top:15px;">
+        <div class="col-sm">
+
+          <button type="button" class="collapsible">Extra informatie
+            <img src="arrow_down.webp" style="height:25px; float:right; opacity: 0.4;"></img></button>
+
+          <div class="content">
+            <div class="row" style="padding-top:10px;">
+              <div class="col-sm">
+                <p style="padding-top:10px;">Toegangscode technische ruimte Vervolgens het alarm uitschakelen met de
+                  alarmcode.
+                  <br>- Nieuwe code 4115 (deur 5114)<br>- Alarmcode 4120<br>Bij toegang problemen SFA (Emma) bellen!
+                </p>
+
+              </div>
+              <div class="col-sm">
+                <p style="padding-top:10px;">
+                  <b>Contactpersoon</b><br>Bij problemen of uitvoering niet mogelijk direct bellen:
+                  <br>Rober van Ispelen, tel +32 32413239<br>Vanaf 2019 ook gw pelibuizen 2 en 3
+                  bemonsteren<br>Tankkeuring juni 2021
+                </p>
+
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+        <div class="col-sm">
+          <button type="button" class="collapsible">Interne opmerkingen
+            <img src="arrow_down.webp" style="height:25px; float:right; opacity: 0.4;"></img></button>
+
+          <div class="content">
+            <div class="row" style="padding-top:10px;">
+              <div class="col-sm">
+                <div class="form-group">
+                  <div style="padding-top:10px; padding-bottom:10px">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
+                  </div>
+                  <form action="/action_page.php">
+                    <input type="file" id="myFile" name="filename">
+                  </form>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
-    
-  </div>
-</div>
-</div>
-<hr>
-<!-- Grondwater
-Dummy data van: 7310111 Texaco Boxtel-->
-<div class="row" >
-  <div class="col-sm">
 
-    
-    <div style=" width: 80%;">
-    <h5>Grondwater bemonstering</h5>
-    <table id="example" style="width:100%">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Peilbuis 1</th>
-          <th>Peilbuis 2</th>
-          <th>Peilbuis 3</th>
-              
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Diepte peilbuis tov bovenkant peilbuis (cm)</td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value="395"></td>
-          <td><input type="text" id="row-1-position" name="row-1-position" value="400"></td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value="320"></td>   
-        </tr>
-        <tr>
-          <td>Bovenkant peilbuis tov maaiveld (cm)</td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
-          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>   
-        </tr>
-        <tr>
-          <td>Inwendige diameter filter (mm) / Lengte filter (cm)</td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value="28 / 100"></td>
-          <td><input type="text" id="row-1-position" name="row-1-position" value="36 / 100"></td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value="28 / 100"></td>    
-        </tr>
-        <tr>
-          <td>Grondwaterstand tov bovenkant peilbuis (cm)</td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
-          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
-        </tr>
-        <tr>
-          <td>Peilbuis snijdend met grondwater?</td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
-          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
-        </tr>
-        <tr>
-          <td>Drijflaag of zaklaag aanwezig?</td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
-          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
-        </tr>
-        <tr>
-          <td>Afgepompte volume (liter)</td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
-          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
-        </tr>
-        <tr>
-          <td>EGV (μS/cm)</td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
-          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
-        </tr>
-        <tr>
-          <td>Temperatuur (°C)</td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
-          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
-        </tr>
-        <tr>
-          <td>Kleurloos/Helder/Geurloos (passief waarnemen)?</td>
-          
-          
-          <td><select style="width:32%" name="janee" id="anee">
-            <option value="ja">Ja</option>
-            <option value="nee">Nee</option>
-          </select>
-          <select style="width:32%" name="janee" id="anee">
-            <option value="ja">Ja</option>
-            <option value="nee">Nee</option>
-          </select>
-          <select style="width:32%" name="janee" id="anee">
-            <option value="ja">Ja</option>
-            <option value="nee">Nee</option>
-          </select></td>
-          
-          <td><select style="width:32%" name="janee" id="anee">
-            <option value="ja">Ja</option>
-            <option value="nee">Nee</option>
-          </select>
-          <select style="width:32%" name="janee" id="anee">
-            <option value="ja">Ja</option>
-            <option value="nee">Nee</option>
-          </select>
-          <select style="width:32%" name="janee" id="anee">
-            <option value="ja">Ja</option>
-            <option value="nee">Nee</option>
-          </select></td>
-          <td><select style="width:32%" name="janee" id="anee">
-            <option value="ja">Ja</option>
-            <option value="nee">Nee</option>
-          </select>
-          <select style="width:32%" name="janee" id="anee">
-            <option value="ja">Ja</option>
-            <option value="nee">Nee</option>
-          </select>
-          <select style="width:32%" name="janee" id="anee">
-            <option value="ja">Ja</option>
-            <option value="nee">Nee</option>
-          </select></td>     
-        </tr>
-        <tr>
-          <td>Peilbuis goedlopend/slechtlopend</td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
-          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
-        </tr>
-        <tr>
-          <td>Niet belucht / belucht / onbekend<br>Indien belucht, voldoende voor vol flesje?</td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
-          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
-        </tr>
-        <tr>
-          <td>Afgeweken van protocol 2002 of NEN 5744/A1?</td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
-          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
-        </tr>
-        <tr>
-          <td>Tijdstip monstername</td>
-          <td><input type="time" id="row-1-age" name="row-1-age" value=""></td>
-          <td><input type="time" id="row-1-position" name="row-1-position" value=""></td>
-          <td><input type="time" id="row-1-age" name="row-1-age" value=""></td>     
-        </tr>
-        <tr>
-          <td>Monstercode minerale olie</td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
-          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
-        </tr>
-        <tr>
-          <td>Monstercode vluchtige verbindingen</td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
-          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
-        </tr>
-        <tr>
-          <td>Opmerkingen</td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
-          <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-          <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>     
-        </tr>
-        
-    
-      </tbody>
-      <!-- <tfoot> -->
-          <!-- <tr> -->
+
+
+    <!-- Grondwater
+    Dummy data van: 7310111 Texaco Boxtel-->
+    <div id="gwm" class="tabcontent">
+      <div class="row" style="padding-top:15px;">
+        <div class="col-sm">
+
+
+          <div style=" width: 80%;">
+            <h5 style="padding-bottom:10px;">Grondwater bemonstering</h5>
+            <table id="example" style="width:100%">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Peilbuis 1</th>
+                  <th>Peilbuis 2</th>
+                  <th>Peilbuis 3</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Diepte peilbuis tov bovenkant peilbuis (cm)</td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value="395"></td>
+                  <td><input type="text" id="row-1-position" name="row-1-position" value="400"></td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value="320"></td>
+                </tr>
+                <tr>
+                  <td>Bovenkant peilbuis tov maaiveld (cm)</td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                  <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                </tr>
+                <tr>
+                  <td>Inwendige diameter filter (mm) / Lengte filter (cm)</td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value="28 / 100"></td>
+                  <td><input type="text" id="row-1-position" name="row-1-position" value="36 / 100"></td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value="28 / 100"></td>
+                </tr>
+                <tr>
+                  <td>Grondwaterstand tov bovenkant peilbuis (cm)</td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                  <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                </tr>
+                <tr>
+                  <td>Peilbuis snijdend met grondwater?</td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                  <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                </tr>
+                <tr>
+                  <td>Drijflaag of zaklaag aanwezig?</td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                  <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                </tr>
+                <tr>
+                  <td>Afgepompte volume (liter)</td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                  <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                </tr>
+                <tr>
+                  <td>EGV (μS/cm)</td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                  <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                </tr>
+                <tr>
+                  <td>Temperatuur (°C)</td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                  <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                </tr>
+                <tr>
+                  <td>Kleurloos/Helder/Geurloos (passief waarnemen)?</td>
+
+
+                  <td><select style="width:32%" name="janee" id="anee">
+                      <option value="ja">Ja</option>
+                      <option value="nee">Nee</option>
+                    </select>
+                    <select style="width:32%" name="janee" id="anee">
+                      <option value="ja">Ja</option>
+                      <option value="nee">Nee</option>
+                    </select>
+                    <select style="width:32%" name="janee" id="anee">
+                      <option value="ja">Ja</option>
+                      <option value="nee">Nee</option>
+                    </select>
+                  </td>
+
+                  <td><select style="width:32%" name="janee" id="anee">
+                      <option value="ja">Ja</option>
+                      <option value="nee">Nee</option>
+                    </select>
+                    <select style="width:32%" name="janee" id="anee">
+                      <option value="ja">Ja</option>
+                      <option value="nee">Nee</option>
+                    </select>
+                    <select style="width:32%" name="janee" id="anee">
+                      <option value="ja">Ja</option>
+                      <option value="nee">Nee</option>
+                    </select>
+                  </td>
+                  <td><select style="width:32%" name="janee" id="anee">
+                      <option value="ja">Ja</option>
+                      <option value="nee">Nee</option>
+                    </select>
+                    <select style="width:32%" name="janee" id="anee">
+                      <option value="ja">Ja</option>
+                      <option value="nee">Nee</option>
+                    </select>
+                    <select style="width:32%" name="janee" id="anee">
+                      <option value="ja">Ja</option>
+                      <option value="nee">Nee</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Peilbuis goedlopend/slechtlopend</td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                  <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                </tr>
+                <tr>
+                  <td>Niet belucht / belucht / onbekend<br>Indien belucht, voldoende voor vol flesje?</td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                  <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                </tr>
+                <tr>
+                  <td>Afgeweken van protocol 2002 of NEN 5744/A1?</td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                  <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                </tr>
+                <tr>
+                  <td>Tijdstip monstername</td>
+                  <td><input type="time" id="row-1-age" name="row-1-age" value=""></td>
+                  <td><input type="time" id="row-1-position" name="row-1-position" value=""></td>
+                  <td><input type="time" id="row-1-age" name="row-1-age" value=""></td>
+                </tr>
+                <tr>
+                  <td>Monstercode minerale olie</td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                  <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                </tr>
+                <tr>
+                  <td>Monstercode vluchtige verbindingen</td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                  <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                </tr>
+                <tr>
+                  <td>Opmerkingen</td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                  <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+                  <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                </tr>
+
+
+              </tbody>
+              <!-- <tfoot> -->
+              <!-- <tr> -->
               <!-- <th>Tank nr.</th> -->
               <!-- <th>Inhoud(m3)</th> -->
               <!-- <th>Product</th> -->
-      <!-- <th>Bekleding</th> -->
-      <!-- <th>Bouwjaar</th> -->
-      <!-- <th>M.E.P. aan</th> -->
-      <!-- <th>in -mV uit</th> -->
-      <!-- <th>Stroom (mA)</th> -->
-      <!-- <th>> 5 mm water cm-pH-</th> -->
-      <!-- <th>Sludge</th> -->
-      <!-- <th>Opm.</th> -->
-      <!-- <th>Conclusie</th> -->
-          <!-- </tr> -->
-      <!-- </tfoot> -->
-  </table>
-</div>
+              <!-- <th>Bekleding</th> -->
+              <!-- <th>Bouwjaar</th> -->
+              <!-- <th>M.E.P. aan</th> -->
+              <!-- <th>in -mV uit</th> -->
+              <!-- <th>Stroom (mA)</th> -->
+              <!-- <th>> 5 mm water cm-pH-</th> -->
+              <!-- <th>Sludge</th> -->
+              <!-- <th>Opm.</th> -->
+              <!-- <th>Conclusie</th> -->
+              <!-- </tr> -->
+              <!-- </tfoot> -->
+            </table>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row" style="padding-top:15px; padding-bottom:15px;">
+        <div class="col-sm">
+
+          <button type="button" class="collapsible">Extra informatie
+            <img src="arrow_down.webp" style="height:25px; float:right; opacity: 0.4;"></img></button>
+
+          <div class="content" style="overflow:auto;">
+            <div class="row">
+
+              <p style="padding:10px;">
+                Voor de monstername wordt een slangenpomp toegepast. Er wordt veldfiltratie uitgevoerd.
+                Conserveermiddelen worden vooraf aan het monster toegevoegd.<br><br>
+                De verklaring van accredilatie van Vandervelde Protection BV en het hierbij behorende keurmerk zijn
+                uitsluitend van toepassing op de activiteiten zoals vastgelegd op het overzicht van verichtingen
+                betreffende de monsterneming en de overdracht van de monsters, inclusief de daarbij behorende
+                veldwerkregistratie, aan een erkende instelling.<br><br>
+                Het grondwatermonster wordt geanalyseerd op de verontreiniging conform AS SIKB 3000 door SGS (een voor
+                deze werkzaamheden geaccrediteerd en door de Minister erkend laboratorium).<br><br>
+                Bemonstering grondwater is uitgevoerd onafhankelijk van de opdrachtgever conform AS SIKB 2000.
+              </p>
+
+
+            </div>
+
+          </div>
+
+
+        </div>
+        <div class="col-sm">
+          <button type="button" class="collapsible">Interne opmerkingen
+            <img src="arrow_down.webp" style="height:25px; float:right; opacity: 0.4;"></img></button>
+
+          <div class="content">
+            <div class="row" style="padding-top:10px;">
+              <div class="col-sm">
+                <div class="form-group">
+                  <div style="padding-top:10px; padding-bottom:10px">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
+                  </div>
+                  <form action="/action_page.php">
+                    <input type="file" id="myFile" name="filename">
+                  </form>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
 
   </div>
-</div>
-
-<div class="row" style="padding-top:15px; padding-bottom:15px;">
-    <div class="col-sm">
-	
-	<button type="button" class="collapsible">Extra informatie
-	<img src="arrow_down.webp" style="height:25px; float:right; opacity: 0.4;"></img></button>
-	
-		<div class="content"  style="overflow:auto;">
-			<div class="row">
-        
-					<p style="padding:10px;">
-            Voor de monstername wordt een slangenpomp toegepast. Er wordt veldfiltratie uitgevoerd. Conserveermiddelen worden vooraf aan het monster toegevoegd.<br><br>
-            De verklaring van accredilatie van Vandervelde Protection BV en het hierbij behorende keurmerk zijn uitsluitend van toepassing op de activiteiten zoals vastgelegd op het overzicht van verichtingen betreffende de monsterneming en de overdracht van de monsters, inclusief de daarbij behorende veldwerkregistratie, aan een erkende instelling.<br><br>
-            Het grondwatermonster wordt geanalyseerd op de verontreiniging conform AS SIKB 3000 door SGS (een voor deze werkzaamheden geaccrediteerd en door de Minister erkend laboratorium).<br><br>
-            Bemonstering grondwater is uitgevoerd onafhankelijk van de opdrachtgever conform AS SIKB 2000.
-          </p>
-				
-				
-			</div>
-		  
-		</div>
-	
-	
-	</div>
-	<div class="col-sm">
-		<button type="button" class="collapsible">Interne opmerkingen
-	<img src="arrow_down.webp" style="height:25px; float:right; opacity: 0.4;"></img></button>
-	
-		<div class="content">
-			<div class="row" style="padding-top:10px;">
-				<div class="col-sm">
-					<div class="form-group">
-						<div style="padding-top:10px; padding-bottom:10px">
-							<textarea class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
-						</div>
-						<form action="/action_page.php">
-							<input type="file" id="myFile" name="filename">
-						</form>
-						
-					</div>
-				
-				</div>
-			</div>
-		  
-		</div>
-	</div>
-</div>
-
-
-  
-</div>
-<script>
-$(document).ready(function() {
-    var table = $('#example').DataTable({
+  <script>
+    $(document).ready(function () {
+      var table = $('#example').DataTable({
         columnDefs: [{
-            orderable: false,
-            targets: [1,2,3]
+          orderable: false,
+          targets: [1, 2, 3]
         }]
-    });
- 
-    $('button').click( function() {
+      });
+
+      $('button').click(function () {
         var data = table.$('input, select').serialize();
         alert(
-            "The following data would have been submitted to the server: \n\n"+
-            data.substr( 0, 120 )+'...'
+          "The following data would have been submitted to the server: \n\n" +
+          data.substr(0, 120) + '...'
         );
         return false;
-    } );
-} );
-</script>
+      });
+    });
+  </script>
 
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
     }
-  });
-}
-</script>
+  </script>
+
+
+  <!-- Open tabs-->
+  <script>
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
+
+  <script>
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+  </script>
 
 </body>
+
 </html>

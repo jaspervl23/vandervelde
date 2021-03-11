@@ -33,7 +33,7 @@
   
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-      <a class="nav-item nav-link " href="index.html">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link " href="index.html">Home</a>
       <a class="nav-item nav-link active" href="inspecties.html">Inspecties</a>
       
       </div>
@@ -46,58 +46,58 @@
 
 
   <div class="row" style="margin: 15px;">
+    
     <div class="col-sm">
-		<h4 style="padding-bottom: 10px;">Openstaande inspecties:</h4>
-		<div class="input-group rounded" style="padding-bottom: 10px;">
-			<input type="search" class="form-control rounded" placeholder="Zoek op debiteurnummer" aria-label="Search" aria-describedby="search-addon" />
-			<span class="input-group-text border-0" id="search-addon">
-				<i class="fas fa-search"></i>
-			</span>
-		</div>
-	
-	
+      <h4 style="padding-bottom: 10px;">Openstaande inspecties:</h4>
+      <div class="input-group rounded" style="padding-bottom: 10px;">
+        <input type="search" class="form-control rounded" placeholder="Zoek op debiteurnummer" aria-label="Search" aria-describedby="search-addon" />
+        <span class="input-group-text border-0" id="search-addon">
+          <i class="fas fa-search"></i>
+        </span>
+      </div>
+      
+      
       <ul id="myDIV" class="list-group">
-		<li class="list-group-item list-group-item-action">720036 IDS Maasdijk KB WS Aarding</li>
-		<li class="list-group-item list-group-item-action">7310111 Texaco Boxtel Grondwater</li>
-		<li class="list-group-item list-group-item-action">7310930 Esso Rotterdam KB WS Aarding</li>
-		<li class="list-group-item list-group-item-action">3539001 Verpleeghuis Sammersbrug Den Haag</li>
-		<li class="list-group-item list-group-item-action">4323031 Gemaal Rijsoord rioolleiding</li>
-	</ul>
+        <li class="list-group-item list-group-item-action">720036 IDS Maasdijk KB WS Aarding</li>
+        <li class="list-group-item list-group-item-action">7310111 Texaco Boxtel Grondwater</li>
+        <li class="list-group-item list-group-item-action">7310930 Esso Rotterdam KB WS Aarding</li>
+        <li class="list-group-item list-group-item-action">3539001 Verpleeghuis Sammersbrug Den Haag</li>
+        <li class="list-group-item list-group-item-action">4323031 Gemaal Rijsoord rioolleiding</li>
+      </ul>
     </div>
+
     <div class="col-sm" style="margin: 5px;">
-		<h5 id="text" >Selecteer een formulier uit de lijst</h5>
-		<div id="info" style="display:none">
-			<a><b>Datum:</b> 3-3-2021
-			<br><b>Adres:</b> Drienerlolaan 5, 7522 NB Enschede
-			<br><b>Contactpersoon:</b> Mr.Jansen</a>
-			<div style="padding-top: 15px">
-			<form action="form_example.html">
-			<button type="submit" onclick="form_example.html" class="btn btn-primary">Begin invullen formulier</button>
-			</form>
+		  <h5 id="text" >Selecteer een formulier uit de lijst</h5>
+		    <div id="info" style="display:none">
+          <b>Datum:</b> 3-3-2021
+          <br><b>Adres:</b> Drienerlolaan 5, 7522 NB Enschede
+          <br><b>Contactpersoon:</b> Mr.Jansen
+			      <form action="form_example.html">
+			        <button type="submit" onclick="form_example.html" class="btn btn-primary">Inspectie Invullen</button>
+			      </form>
+		    </div>
 		</div>
-		</div>
-    </div>
+
   </div>
-  <div></div>
 
   <script>
-  // Add active class to the current button (highlight it)
-var header = document.getElementById("myDIV");
-var btns = header.getElementsByClassName("list-group-item list-group-item-action");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-  var current = document.getElementsByClassName("active");
-  current[0].className = current[0].className.replace(" active", "");
-  this.className += " active";
-  var information = document.getElementById("text");
-  var name = current[0].textContent;
-  information.innerHTML = name;
-  var x = document.getElementById("info");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  }
-  });
-}
+    // Add active class to the current button (highlight it)
+    var header = document.getElementById("myDIV");
+    var btns = header.getElementsByClassName("list-group-item list-group-item-action");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function() {
+      var current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+      var information = document.getElementById("text");
+      var name = current[0].textContent;
+      information.innerHTML = name;
+      var x = document.getElementById("info");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      }  
+    });
+    }
 </script>
 </body>
 </html>

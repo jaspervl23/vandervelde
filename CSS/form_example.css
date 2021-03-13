@@ -1,9 +1,4 @@
-.header {
-    width: 100%;
-    height: 100%;
-    background-color: #D4D8D4;
-}
-
+/* Hide scrollbar */
 body::-webkit-scrollbar {
     display: none;
 }
@@ -16,43 +11,26 @@ body {
     /* Firefox */
 }
 
-.login-form form {
-    margin-bottom: 15px;
-    background: #f7f7f7;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    padding: 30px;
+.navbar h4 {
+    color: #4F4F4F;
+    margin-left: 5%;
 }
 
-.login-form h2 {
-    margin: 0 0 15px;
-}
-
-.form-control,
-.btn {
-    min-height: 38px;
-    border-radius: 2px;
-}
-
-.btn {
-    font-size: 15px;
-    font-weight: bold;
-    background: #0D8240;
-    border-color: #009933
+.btn {        
+    font-size: 18px;
+	background: #0D8240;
+	border-color: #009933;
 }
 
 .btn:hover {
-    background-color: #009933;
-    border-color: #0D8240
+	background-color: #009933;
+	border-color: #0D8240;
 }
 
-navbar navbar-expand-lg navbar-light bg-light {
-    background-color: #D4D8D4;
-}
-
-h6,
-h4,
-h2 {
-    padding-top: 15px;
+.ml-auto {
+    text-align: right;
+    margin-right: 20px;
+    font-size: 18px;
 }
 
 table {
@@ -148,4 +126,18 @@ th {
 /* Style the tab content */
 .tabcontent {
     display: none;
+}
+
+@media screen and (min-width: 480px) and (max-width: 1024) {
+    .ml-auto {
+        display: none;
+    }
+
+    nav h4 {
+        font-size: 20px;
+    }
+
+    nav p {
+        color: red;
+    }
 }

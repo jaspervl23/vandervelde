@@ -4,8 +4,6 @@
 
 .logo-link {
     width:15%; 
-    margin-top:3px; 
-    margin-bottom:3px;
 }
 
 nav img {
@@ -18,6 +16,6 @@ nav img {
     right: 5%;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 480px) and (max-width: 1024px) {
 
 }

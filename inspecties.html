@@ -2,24 +2,24 @@
 <html lang="nl">
 
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Vandervelde • Inspecties</title>
+  <title>Vandervelde • Inspecties</title>
 
-<!--Connecting the stylesheets that are used on this webpage-->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
-<link rel="stylesheet" href="CSS/overlapping.css">
-<link rel="stylesheet" href="CSS/inspecties.css">
+  <!--Connecting the stylesheets that are used on this webpage-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="CSS/overlapping.css">
+  <link rel="stylesheet" href="CSS/inspecties.css">
 
-<!--favicon-->
-<link rel="icon" href="images/vdv.png">
+  <!--favicon-->
+  <link rel="icon" href="images/vdv.png">
 
-<!--Connecting the scripts that are used for this webpage-->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <!--Connecting the scripts that are used for this webpage-->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 
 </head>
@@ -30,22 +30,23 @@
     <a class="logo-link" href="index.html">
       <img src="images/vdv.png" alt="vandervelde logo">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-          <a class="nav-item nav-link" href="index.html">Home</a>
-          <a class="nav-item nav-link active" href="inspecties.html">Inspecties</a>
-          <a class="log-out nav-item nav-link" href="login.html">Uitloggen</a>
+        <a class="nav-item nav-link" href="index.html">Home</a>
+        <a class="nav-item nav-link active" href="inspecties.html">Inspecties</a>
+        <a class="log-out nav-item nav-link" href="login.html">Uitloggen</a>
       </div>
     </div>
     <p class="user-welcome">Welkom M. Boonzaier</p>
   </nav>
 
   <div class="row">
-    
+
     <div class="col-sm">
       <h4>Openstaande inspecties:</h4>
       <!-- 
@@ -60,16 +61,84 @@
         <li class="list-group-item list-group-item-action">7310930 Esso Rotterdam KB WS Aarding</li>
         <li class="list-group-item list-group-item-action">3539001 Verpleeghuis Sammersbrug Den Haag</li>
         <li class="list-group-item list-group-item-action">4323031 Gemaal Rijsoord rioolleiding</li>
-	    </ul>
+      </ul>
     </div>
 
     <div class="col-sm">
       <h4 id="inspection-name">Selecteer een formulier uit de lijst</h4>
 
       <div id="inspection-info" style="display:none">
-        <b>Datum:</b> 3-3-2021<br>
+        <!--
+        <b>Datum:</b> 17-3-2021<br>
         <b>Adres:</b> Drienerlolaan 5, 7522 NB Enschede<br>
-        <b>Contactpersoon:</b> Mr.Jansen</a>
+        <b>Contactpersoon:</b> Rober van Ispelen, tel +32 32413239</a>-->
+        <div class="row" style="margin-left:0px; margin-right:0px;">
+          <div class="col-sm" style="padding-left:0px;">
+            <h5>Opdrachtgever:</h5>
+
+            <table style="border: none; padding: 0px">
+              <tr>
+                <td>SFA TESTSYSTEMEN BV</td>
+              </tr>
+              <tr>
+                <td style="border: none; padding: 0px">factuur@sfa-testsystemen.nl</td>
+
+              </tr>
+              <tr style="border: none; padding: 0px">
+                <td style="border: none; padding: 0px">Postbus 146</td>
+              </tr>
+              <tr style="border: none; padding: 0px">
+                <td style="border: none; padding: 0px">5690 AC SON EN BREUGEL</td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-sm" style="padding-right:0px;">
+            <h5>Plaats van de installatie:</h5>
+
+            <table style="border: none; padding: 0px">
+              <tr>
+                <td>IDS Maasdijk</td>
+              </tr>
+              <tr>
+                <td style="border: none; padding: 0px">Honderdland 101</td>
+
+              </tr>
+              <tr style="border: none; padding: 0px">
+                <td style="border: none; padding: 0px">2676 LT Maasdijk</td>
+              </tr>
+
+            </table>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row" style="margin-left:0px; margin-right:0px;">
+          <div class="col-sm" style="padding-left:0px;">
+            <h5>Extra informatie:</h5>
+            <p>Toegangscode technische ruimte <br> Vervolgens het alarm uitschakelen met de alarmcode.<br>
+              - Nieuwe code 4115 (deur 5114)<br>
+              - Alarmcode 4120<br>
+              Bij toegang problemen SFA (Emma) bellen!</p>
+
+            
+          </div>
+          <div class="col-sm" style="padding-right:0px;">
+            <h5>Contactpersoon</h5>
+
+            <p>
+              Bij problemen of uitvoering niet mogelijk direct bellen:<br>
+              Rober van Ispelen, tel +32 32413239<br>
+              Vanaf 2019 ook gw pelibuizen 2 en 3 bemonsteren<br>
+              Tankkeuring juni 2021</p>
+          </div>
+        </div>
+
+
+
+
+
+
 
         <form action="form_example.html">
           <button type="submit" onclick="form_example.html" class="btn btn-primary">Begin invullen formulier</button>
@@ -84,4 +153,5 @@
   <script src="JS/inspecties.js"></script>
 
 </body>
+
 </html>

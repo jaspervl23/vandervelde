@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Vandervelde • Afgerond</title>
+
+  <!--Connecting the stylesheets that are used on this webpage-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="CSS/overlapping.css">
+  <link rel="stylesheet" href="CSS/afgerond.css">
+
+  <!--favicon-->
+  <link rel="icon" href="images/vdv.png">
+
+  <!--Connecting the scripts that are used for this webpage-->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="logo-link" href="index.html">
+      <img src="images/vdv.png" alt="vandervelde logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="index.html">Home</a>
+        <a class="nav-item nav-link" href="inspecties.html">Inspecties</a>
+        <a class="nav-item nav-link active" href="afgerond.html">Afgerond</a>
+      </div>
+      <div class="user-welcome">
+        <a class="btn btn-secondary dropdown-toggle list-group-item-success" href="#" role="button"
+          id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+          style="border:0px; background-color: transparent; color:grey;">Welkom M. Boonzaier</a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="login.html">Uitloggen</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="row">
+
+    <div class="col-sm">
+      <h4>Afgeronde inspecties:</h4>
+
+      <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseOne"
+                aria-expanded="false" aria-controls="collapseOne">
+                720036 IDS Maasdijk KB WS Aarding
+              </button>
+            </h5>
+          </div>
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm" >
+                  Datum: 15-3-2021<br>
+                  Status: Afgerond
+                </div>
+                <div class="col-sm">
+                  <button type="button" class="btn btn-success float-right align-baseline" onclick="myFunction()">Open
+                    rapport (PDF)</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="false" aria-controls="collapseTwo">
+                7310111 Texaco Boxtel Grondwater
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm">
+                  Datum: 15-3-2021<br>
+                  Status: Afgerond
+                </div>
+                <div class="col-sm">
+                  <button type="button" class="btn btn-success float-right align-baseline" onclick="myFunction()">Open
+                    rapport (PDF)</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseThree"
+                aria-expanded="false" aria-controls="collapseThree">
+                7310930 Esso Rotterdam KB WS Aarding
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="row">
+
+                <div class="col-sm">
+                  Datum: 14-3-2021<br>
+                  Status: Afgerond
+                </div>
+                <div class="col-sm">
+                  <button type="button" class="btn btn-success float-right align-baseline" onclick="myFunction()">Open
+                    rapport (PDF)</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingFour">
+            <h5 class="mb-0">
+              <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseFour"
+                aria-expanded="false" aria-controls="collapseThree">
+                3539001 Verpleeghuis Sammersbrug Den Haag
+              </button>
+            </h5>
+          </div>
+          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm">
+                  Datum: 14-3-2021<br>
+                  Status: Afgerond
+                </div>
+                <div class="col-sm">
+                  <button type="button" class="btn btn-success float-right align-baseline" onclick="myFunction()">Open
+                    rapport (PDF)</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingFive">
+            <h5 class="mb-0">
+              <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseFive"
+                aria-expanded="false" aria-controls="collapseFive">
+                4323031 Gemaal Rijsoord rioolleiding
+              </button>
+            </h5>
+          </div>
+          <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm">
+                  Datum: 13-3-2021<br>
+                  Status: Afgerond
+                </div>
+                <div class="col-sm">
+                  <button type="button" class="btn btn-success float-right align-baseline" onclick="myFunction()">Open
+                    rapport (PDF)</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm">
+      <div id="myDIV" style="display: none;">
+        <object data="images/720036.pdf" type="application/pdf" width="100%" height="500px"
+          style="border:1px solid grey">
+        </object>
+      </div>
+    </div>
+  </div>
+
+  <script src="JS/afgerond.js"></script>
+
+</body>
+
+</html>

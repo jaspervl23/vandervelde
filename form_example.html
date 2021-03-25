@@ -37,7 +37,7 @@
       <p>Kathodische bescherming<br>Water-sludge<br>Aarding</p>
     </div>
     <div>
-      <a href="inspecties.html"><button class="btn btn-primary">Formulier opslaan</button></a>
+      <a href="inspecties.html"><button class="btn btn-primary" form="my-form">Formulier opslaan</button></a>
     </div>
 
   </nav> 
@@ -128,6 +128,7 @@
         <hr>
         <div class="col-sm">
           <h5 style="padding-bottom:10px;">Kathodische bescherming</h5>
+          <form id="my-form">
           <table id="example" style="width:100%">
             <thead>
               <tr>
@@ -152,9 +153,9 @@
                 <td><input type="text" id="row-1-position" name="row-1-position" value="diesel"></td>
                 <td><input type="text" id="row-1-age" name="row-1-age" value="ep"></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value="2006"></td>
-                <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
-                <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-                <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                <td><input type="text" id="row-1-age" name="row-1-age" value="" required></td>
+                <td><input type="text" id="row-1-position" name="row-1-position" value="" required></td>
+                <td><input type="text" id="row-1-age" name="row-1-age" value="" required></td>
                 <td></td>
                 <td></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
@@ -178,8 +179,8 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-                <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                <td><input type="text" id="row-1-position" name="row-1-position" value="" required></td>
+                <td><input type="text" id="row-1-age" name="row-1-age" value="" required></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
                 <td><select style="width:100%;" size="1" id="row-1-office" name="">
                     <option value="+" selected="selected">
@@ -201,8 +202,8 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-                <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                <td><input type="text" id="row-1-position" name="row-1-position" value="" required></td>
+                <td><input type="text" id="row-1-age" name="row-1-age" value="" required></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
                 <td><select style="width:100%;" size="1" id="row-1-office" name="">
                     <option value="+" selected="selected">
@@ -221,12 +222,12 @@
                 <td><input type="text" id="row-1-position" name="row-1-position" value="reserve"></td>
                 <td><input type="text" id="row-1-age" name="row-1-age" value="ep"></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value="2006"></td>
-                <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
-                <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-                <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                <td><input type="text" id="row-1-age" name="row-1-age" value="" required></td>
+                <td><input type="text" id="row-1-position" name="row-1-position" value="" required></td>
+                <td><input type="text" id="row-1-age" name="row-1-age" value="" required></td>
                 <td></td>
                 <td></td>
-                <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
+                <td><input type="text" id="row-1-position" name="row-1-position" value="" ></td>
                 <td><select style="width:100%;" size="1" id="row-1-office" name="">
                     <option value="+" selected="selected">
                       +
@@ -247,8 +248,8 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
-                <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                <td><input type="text" id="row-1-position" name="row-1-position" value="" required></td>
+                <td><input type="text" id="row-1-age" name="row-1-age" value="" required></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value=""></td>
                 <td><select style="width:100%;" size="1" id="row-1-office" name="">
                     <option value="+" selected="selected">
@@ -281,6 +282,7 @@
             <!-- </tr> -->
             <!-- </tfoot> -->
           </table>
+        </form>
         </div>
       </div>
 
@@ -345,6 +347,7 @@
         <hr>
         <div class="col-sm">
           <h5 style="padding-bottom:10px;">Aarding</h5>
+          <form id="my-form2">
           <table id="example" style="width:100%">
             <thead>
               <tr>
@@ -365,7 +368,7 @@
                 <td><input type="text" id="row-1-position" name="row-1-position" value="diesel"></td>
                 <td><input type="text" id="row-1-age" name="row-1-age" value="ep"></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value="2006"></td>
-                <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                <td><input type="text" id="row-1-age" name="row-1-age" value="" required></td>
                 <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
                 <td><select style="width:100%;" size="1" id="row-1-office" name="">
                     <option value="+" selected="selected">
@@ -384,7 +387,7 @@
                 <td><input type="text" id="row-1-position" name="row-1-position" value="reserve"></td>
                 <td><input type="text" id="row-1-age" name="row-1-age" value="ep"></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value="2006"></td>
-                <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
+                <td><input type="text" id="row-1-age" name="row-1-age" value="" required></td>
                 <td><input type="text" id="row-1-age" name="row-1-age" value=""></td>
                 <td><select style="width:100%;" size="1" id="row-1-office" name="">
                     <option value="+" selected="selected">
@@ -400,6 +403,7 @@
 
             </tbody>
           </table>
+        </form>
         </div>
       </div>
 

@@ -22,8 +22,8 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 
+<!-- Navigation bar -->
 <body>
-
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="logo-link" href="index.html">
 			<img src="images/vdv.png" alt="vandervelde logo">
@@ -51,13 +51,31 @@
 	</nav>
 
 	<div class="row">
+		<!--Upcoming inspections; The list shows the upcoming inspection for the logged in inspector.
+		The data that is displayed is:
+	      - The 'onderdeelnummer' of the inspection
+		  - The date of the inspection  
+		-->
 
+		<!--SQL Script:
+
+			SELECT ONDERDEEL, OMS, SCHEMADATUM, VOORNAAM, ACHTERNAAM
+			FROM STORINGEN ST, PRJONDERDELEN PR, PERSONEN PN
+			WHERE SCHEMADATUM > CURRENT_TIMESTAMP
+			AND ST.PROJECT = PR.PROJECT 
+			AND ST.PERSOON1 = PN.INITIALEN
+			AND INITIALEN = ''
+			ORDER BY SCHEMADATUM ROWS 5
+
+			INITIALTEN should be the initials of the logged in user, they are stored in the STORINGEN table and can be translated to full 
+			names using the PERSONEN table.
+		-->
 		<div class="col-sm">
 			<h4 id="text">Opkomende inspecties:</h4>
 
 			<div class="list-group">
 				<a href="afgerond.html"
-					class="list-group-item list-group-item-action flex-column align-items-start list-group-item-success">
+					class="list-group-item list-group-item-action flex-column align-items-start">
 					<div class="d-flex w-100 justify-content-between">
 						<h5 class="mb-1">720036 IDS Maasdijk KB WS Aarding</h5>
 						<small>17-3-2021</small>
@@ -65,7 +83,7 @@
 				</a>
 
 				<a href="afgerond.html"
-					class="list-group-item list-group-item-action flex-column align-items-start list-group-item-success">
+					class="list-group-item list-group-item-action flex-column align-items-start">
 					<div class="d-flex w-100 justify-content-between">
 						<h5 class="mb-1">7310111 Texaco Boxtel Grondwater</h5>
 						<small class="text-muted">17-3-2021</small>

@@ -25,7 +25,7 @@
 </head>
 
 <body>
-
+  <!-- Navigation bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="logo-link" href="index.html">
       <img src="images/vdv.png" alt="vandervelde logo">
@@ -57,6 +57,16 @@
     <div class="col-sm">
       <h4>Afgeronde inspecties:</h4>
 
+      <!--Will show latest inspection that have been finished. Shows ONDERDEEL, description and date of inspection
+        
+        SQL Script:
+          SELECT ONDERDEEL, OMS, UITVOERING
+          FROM STORINGEN ST, PRJONDERDELEN PR
+          WHERE UITVOERING < CURRENT_TIMESTAMP
+          AND ST.PROJECT = PR.PROJECT 
+          ORDER BY SCHEMADATUM DESC ROWS 10
+        -->
+
       <div class="accordion" id="accordionExample">
         <div class="card">
           <div class="card-header" id="headingOne">
@@ -70,7 +80,7 @@
           <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
             <div class="card-body">
               <div class="row">
-                <div class="col-sm" >
+                <div class="col-sm">
                   Datum: 15-3-2021<br>
                   Status: Afgerond
                 </div>

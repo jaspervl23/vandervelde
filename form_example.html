@@ -34,7 +34,23 @@
 
     <h4>7200336 IDS Maasdijk KB WS Aarding</h4>
     <div class="ml-auto">
-      <!-- Shows all categories of inspection that are relevant.-->
+      <!-- Shows all categories of inspection that are relevant.
+      An inspection can only have 'kathodische bescherming' or 'kathodische bescherming' and 'Aarding' etc.
+      (Kathodische bescherming will always also have water/sludge.)
+      To identify which categories are relevant for the inspection the following SQL script can be used:
+      
+      SQL Script:
+
+        SELECT DISTINCT KLASSE, PROJECT, ID, STORING, ONDERDEEL FROM  PRJONDMEETGEGEVENSKENMERKEN PR, STORINGEN PO, PRJONDERDELEN PRJ
+        WHERE STORING = ''
+        AND PR.PROJECT = PO.PROJECT
+        AND PR.ID = PO.ID
+        AND PR.PROJECT = PRJ.PROJECT
+        AND PR.ID = PRJ.ID
+        ORDER BY ONDERDEEL, STORING, INDENTIFICATIE
+
+        The storing number that is retrieved when selecting an inspection can be used to find this information.
+      -->
       <p>Kathodische bescherming<br>Water-sludge<br>Aarding</p>
     </div>
     <div>
@@ -45,6 +61,8 @@
 
   <div class="row">
 
+      <!-- Same data as on 'inspecties' page.
+      Relevant SQL script can be found there.-->
       <div class="col-sm">
         <h6>Opdrachtgever</h6>
         <p>SFA TESTSYSTEMEN BV<br>factuur@sfa-testsystemen.nl<br>Postbus 146<br>5690 AC SON EN
@@ -112,6 +130,23 @@
         <h4 style="font-size:30px">Bevindingen</h4>
       </div>
       <div class="col-sm" style="background-color: #f5f3f3; border-top: 2px solid white;">
+
+        <!-- As stated before, an inspection can have different categories that have to be inspected. For this example all three
+        categories are implemented. This means three tabs to fill in all three.
+        Determining which categories should be displayed can be done with the SQL script mentioned above:
+      
+        SQL Script:
+
+          SELECT DISTINCT KLASSE, PROJECT, ID, STORING, ONDERDEEL FROM  PRJONDMEETGEGEVENSKENMERKEN PR, STORINGEN PO, PRJONDERDELEN PRJ
+          WHERE STORING = ''
+          AND PR.PROJECT = PO.PROJECT
+          AND PR.ID = PO.ID
+          AND PR.PROJECT = PRJ.PROJECT
+          AND PR.ID = PRJ.ID
+          ORDER BY ONDERDEEL, STORING, INDENTIFICATIE
+      
+
+      -->
         <div class="tab">
           <button class="tablinks " onclick="openCity(event, 'kath')" id="defaultOpen">Kath. bescherming</button>
           <button class="tablinks" onclick="openCity(event, 'aarding')">Aarding</button>
@@ -132,6 +167,7 @@
           <form id="my-form">
           <table id="example" style="width:100%">
             <thead>
+              <!-- Column heads are static for every inspection-->
               <tr>
                 <th>Tank nr.</th>
                 <th>Inhoud(m3)</th>
@@ -149,6 +185,21 @@
             </thead>
             <tbody>
               <tr>
+                <!-- For this example the fixed data has been hardcoded below. (Fixed data: product, inhoud, bouwjaar, bekleding)
+                Normally this data can be retrieved using the following SQL script:
+                The identification can be used to determine the tanknumber and the water/sludge that belong to these tanks.
+                Example: Tank 1 has identification: T1, Tank 2 has T2, first water/sludge of Tank 1 has T1.1, second water/sludge 
+                of tank 1 has T1.2.
+              
+              SQL Script; Fixed data for Tank object
+
+                SELECT STORING, INDENTIFICATIE, KLASSE, VELD, WAARDE FROM PRJONDMEETGEGEVENSKENMERKEN PMK, STORINGEN ST
+                WHERE PMK.PROJECT = ST.PROJECT
+                AND (KLASSE = 'Tank' OR KLASSE = 'Water-Sludge')
+                AND PMK.ID = ST.ID
+                AND STORING = ''
+
+            -->
                 <td>1</td>
                 <td><input type="text" id="row-1-age" name="row-1-age" value="100"></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value="diesel"></td>
@@ -266,22 +317,6 @@
 
 
             </tbody>
-            <!-- <tfoot> -->
-            <!-- <tr> -->
-            <!-- <th>Tank nr.</th> -->
-            <!-- <th>Inhoud(m3)</th> -->
-            <!-- <th>Product</th> -->
-            <!-- <th>Bekleding</th> -->
-            <!-- <th>Bouwjaar</th> -->
-            <!-- <th>M.E.P. aan</th> -->
-            <!-- <th>in -mV uit</th> -->
-            <!-- <th>Stroom (mA)</th> -->
-            <!-- <th>> 5 mm water cm-pH-</th> -->
-            <!-- <th>Sludge</th> -->
-            <!-- <th>Opm.</th> -->
-            <!-- <th>Conclusie</th> -->
-            <!-- </tr> -->
-            <!-- </tfoot> -->
           </table>
         </form>
         </div>
@@ -290,6 +325,8 @@
       <div class="row" style="padding-top:15px;">
         <div class="col-sm">
 
+          <!-- Same data as on 'inspecties' page.
+          Relevant SQL script can be found there.-->
           <button type="button" class="collapsible">Extra informatie
             <img src="images/arrow_down.webp" style="height:25px; float:right; opacity: 0.4;"></img></button>
 
@@ -364,6 +401,16 @@
             </thead>
             <tbody>
               <tr>
+
+                <!--SQL SCRIPT; fixed data Aarding object
+
+                  SELECT STORING, INDENTIFICATIE, KLASSE, VELD, WAARDE FROM PRJONDMEETGEGEVENSKENMERKEN PMK, STORINGEN ST
+                  WHERE PMK.PROJECT = ST.PROJECT
+                  AND KLASSE = 'Aarding'
+                  AND PMK.ID = ST.ID
+                  AND STORING = ''
+              
+                -->
                 <td>1</td>
                 <td><input type="text" id="row-1-age" name="row-1-age" value="100"></td>
                 <td><input type="text" id="row-1-position" name="row-1-position" value="diesel"></td>
@@ -475,6 +522,16 @@
             <h5 style="padding-bottom:10px;">Grondwater bemonstering</h5>
             <table id="example" style="width:100%">
               <thead>
+
+                <!--SQL script: Fixed data for gronwatermonitoring object: (Diepte & Filter-diameter-lengte)
+
+                  SELECT STORING, INDENTIFICATIE, KLASSE, VELD, WAARDE FROM PRJONDMEETGEGEVENSKENMERKEN PMK, STORINGEN ST
+                  WHERE PMK.PROJECT = ST.PROJECT
+                  AND KLASSE = 'Grondwatermonitoring'
+                  AND PMK.ID = ST.ID
+                  AND STORING = ''
+
+                -->
                 <tr>
                   <th></th>
                   <th>Peilbuis 1</th>

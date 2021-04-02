@@ -55,11 +55,12 @@
 		The data that is displayed is:
 	      - The 'onderdeelnummer' of the inspection
 		  - The date of the inspection  
+		
 		-->
 
 		<!--SQL Script:
 
-			SELECT ONDERDEEL, OMS, SCHEMADATUM, VOORNAAM, ACHTERNAAM
+			SELECT ONDERDEEL, OMS, SCHEMADATUM, VOORNAAM, ACHTERNAAM, STORING
 			FROM STORINGEN ST, PRJONDERDELEN PR, PERSONEN PN
 			WHERE SCHEMADATUM > CURRENT_TIMESTAMP
 			AND ST.PROJECT = PR.PROJECT 

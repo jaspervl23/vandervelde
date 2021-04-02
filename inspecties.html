@@ -56,11 +56,14 @@
 
   <div class="row">
     <!-- Upcoming inspection; Same list as the home page. 
+      At the end of the names in the list, the storing nummer is displayed. This can be used to identify the inspection.
+      Onderdeel identifies the project, whereas STORING identifies a specific instance of an inspection within a project.
+      STORING number should be used to get the right webform.
     -->
 
     <!--SQL Script:
 
-			SELECT ONDERDEEL, OMS, SCHEMADATUM, VOORNAAM, ACHTERNAAM
+			SELECT ONDERDEEL, OMS, SCHEMADATUM, VOORNAAM, ACHTERNAAM, STORING
 			FROM STORINGEN ST, PRJONDERDELEN PR, PERSONEN PN
 			WHERE SCHEMADATUM > CURRENT_TIMESTAMP
 			AND ST.PROJECT = PR.PROJECT 
@@ -75,11 +78,11 @@
       <h4>Openstaande inspecties:</h4>
 
       <ul id="myDIV" class="list-group">
-        <li class="list-group-item list-group-item-action">720036 IDS Maasdijk KB WS Aarding</li>
-        <li class="list-group-item list-group-item-action">7310111 Texaco Boxtel Grondwater</li>
-        <li class="list-group-item list-group-item-action">7310930 Esso Rotterdam KB WS Aarding</li>
-        <li class="list-group-item list-group-item-action">3539001 Verpleeghuis Sammersbrug Den Haag</li>
-        <li class="list-group-item list-group-item-action">4323031 Gemaal Rijsoord rioolleiding</li>
+        <li class="list-group-item list-group-item-action">720036 IDS Maasdijk KB WS Aarding - 27229</li>
+        <li class="list-group-item list-group-item-action">7310111 Texaco Boxtel Grondwater - 27197</li>
+        <li class="list-group-item list-group-item-action">7310930 Esso Rotterdam KB WS Aarding - 27088</li>
+        <li class="list-group-item list-group-item-action">3539001 Verpleeghuis Sammersbrug Den Haag - 25901</li>
+        <li class="list-group-item list-group-item-action">4323031 Gemaal Rijsoord rioolleiding - 26147</li>
       </ul>
     </div>
 
